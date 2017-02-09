@@ -1,13 +1,13 @@
-Title: <%= @job.title %>
+<h1 class='title'>Title: <%= @job.title %></h1>
 <br>
 
-Description: <%= @job.description %>
+<h3 class='description'>Description: <%= @job.description %></h3>
 <br>
 
-Level of Interest: <%= @job.level_of_interest %>
+<h3 class='interest'>Level of Interest: <%= @job.level_of_interest %></h3>
 <br>
 
-City: <%= @job.city %>
+<h3 class='city'>City: <%= @job.city %></h3>
 <br>
 
-Company: <%= link_to @job.company.name, company_path(@job.company) %>
+<h3 class='company'>Company: <%= link_to @job.company.name, company_path(@job.company) %></h3>
