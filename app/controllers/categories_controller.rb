@@ -18,6 +18,7 @@ class CategoriesController < ApplicationController
 
   def show
     set_category
+    @jobs = @category.jobs
   end
 
   def edit

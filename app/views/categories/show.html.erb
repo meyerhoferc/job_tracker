@@ -1,2 +1,9 @@
 <h1>Category</h1>
 <h3 class=title><%= @category.title %></h3>
+<h3>Jobs in this Category</h3>
+<% @jobs.each do |job| %>
+  <ul class=job_<%= job.id %>>
+    <%= link_to job.title, company_job_path(job.company, job) %>
+    at <%= job.company.name %>: (<%= job.city %>)<br />
+  </ul>
+<% end %>
