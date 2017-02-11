@@ -2,5 +2,6 @@
 <% @categories.each do |category| %>
   <div class=category_<%= category.id %>>
     <%= category.title %>
+    <%= link_to "Edit", edit_category_path(category) %>
   </div>
 <% end %>

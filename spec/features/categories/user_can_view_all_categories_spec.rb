@@ -11,7 +11,7 @@ describe "user can see all categories" do
     within("h1") do
       expect(page).to have_content("All Categories")
     end
-save_and_open_page
+    
     within(".category_#{category_1.id}") do
       expect(page).to have_content("DevOps")
     end
