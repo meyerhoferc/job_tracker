@@ -3,8 +3,12 @@ require 'rails_helper'
 feature "user deletes an existing job" do
   scenario "a user can delete a job" do
     company = Company.create!(name: "StackOverflow")
+    category = Category.create!(title: "Engineering")
     job = company.jobs.create!(title: "Rails Developer",
-      description: "do rails things", level_of_interest: 3, city: "Denver")
+                               description: "do rails things",
+                               level_of_interest: 3,
+                               city: "Denver",
+                               category: category)
 
     visit company_jobs_path(company)
     within(".job_#{job.id}") do
