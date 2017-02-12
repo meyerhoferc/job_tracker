@@ -16,8 +16,7 @@ describe "User sees one company" do
   scenario "a user enters contact information" do
     company = Company.create!(name: "Disney")
     visit company_jobs_path(company)
-    save_and_open_page
-    
+
     expect(Contact.count).to eq(0)
 
     fill_in("contact[name]", with: "Courtney Meyerhofer")
@@ -26,7 +25,8 @@ describe "User sees one company" do
     click_on("Create")
 
     expect(Contact.count).to eq(1)
-    expect(current_path).to eq(company_path(company))
+    expect(current_path).to eq(company_jobs_path(company))
+
     within('.contacts') do
       expect(page).to have_content("Name: Courtney Meyerhofer")
       expect(page).to have_content("Position: noob")

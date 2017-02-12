@@ -1,4 +1,4 @@
-All Jobs for <strong><%= @company.name %></strong>
+<h1>All Jobs for <strong><%= @company.name %></strong></h1>
 
 <% @jobs.each do |job| %>
 <div class=job_<%= job.id %>>
@@ -6,3 +6,18 @@ All Jobs for <strong><%= @company.name %></strong>
   <%= link_to "Delete", company_job_path(@company, job), method: "delete" %>
 </div>
 <% end %>
+
+<h3>Contact Information</h3>
+
+<section class='contacts'>
+  <% @company.contacts.each do |contact| %>
+    <ul>
+      Name: <%= contact.name %><br />
+      Position: <%= contact.position %><br />
+      Email: <%= contact.email %>
+    </ul>
+  <% end %>
+</section>
+
+<h4>Enter a New Contact for <%= @company.name %></h4>
+<%= render partial: 'contacts/contact' %>
