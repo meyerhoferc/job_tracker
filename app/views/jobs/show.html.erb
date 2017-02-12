@@ -11,3 +11,11 @@
 <br>
 
 <h3 class='company'>Company: <%= link_to @job.company.name, company_path(@job.company) %></h3>
+
+<h4>Comments about this Posting</h4>
+<section class='comments'>
+  <%= render partial: "jobs/comment", collection: @job.comments.reverse %>
+</section>
+
+<h4>Add a Comment</h4>
+<%= render partial: "comments/form" %>
